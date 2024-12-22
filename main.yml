@@ -5,7 +5,6 @@
   roles:
     - role: "roles/install-tools"
     - role: "roles/configure-tmux"
-    - role: "roles/customize-terminal"
     - role: "roles/customize-browser"
     - role: "roles/configure-logging"
     - role: "roles/configure-system"
@@ -20,8 +19,4 @@
             - snyk-security.snyk-vulnerability-scanner
 
     - role: "roles/start-kali-clean"
-  post_tasks:
-    - name: "Reboot"
-      reboot:
-        msg: "Rebooting kali"
-        pre_reboot_delay: 10
+    - role: "roles/customize-terminal"
