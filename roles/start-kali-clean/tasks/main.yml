@@ -7,10 +7,7 @@
   become_method: sudo
 
 - name: Run the installation script
-  command: "/opt/kali-clean/install.sh"
+  command: "./install.sh"
   args:
     chdir: "/opt/kali-clean"
 
-- name: Clean up (optional)
-  shell: rm -rf "/opt/kali-clean"
-  when: cleanup | default(false)
