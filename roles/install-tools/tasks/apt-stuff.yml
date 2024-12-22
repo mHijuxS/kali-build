@@ -15,6 +15,7 @@
       - jq
       - ruby-rubygems
       - ruby-dev
+      - dconf-cli
       - golang
       - pipx
       - ntpdate
