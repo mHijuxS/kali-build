@@ -13,6 +13,7 @@
   package:
     name:
       - jq
+      - golang
       - pipx
       - ntpdate
       - flameshot
