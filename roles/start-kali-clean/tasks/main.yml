@@ -1,28 +1,9 @@
 ---
-- name: Install Clean Kali from Xct GitHub Page
-  become: yes
-  vars:
-    kali_repo_url: "https://github.com/xct/kali-clean"
-    kali_install_dir: "/opt/kali-clean"
-
-- name: Clone the Kali clean repository
+- name: "Clone the kali Clean Repo"
   git:
-    repo: "{{ kali_repo_url }}"
-    dest: "{{ kali_install_dir }}"
+    repo: "https://github.com/xct/kali-clean"
+    dest: "/opt/kali-clean"
+  become: true
+  become_method: sudo
 
-- name: Change directory permissions
-  file:
-    path: "{{ kali_install_dir }}"
-    state: directory
-    owner: root
-    group: root
-    mode: '0755'
 
-- name: Run the installation script
-  command: "{{ kali_install_dir }}/install.sh"
-  args:
-    chdir: "{{ kali_install_dir }}"
-
-- name: Clean up (optional)
-  shell: rm -rf "{{ kali_install_dir }}"
-  when: cleanup | default(false)
