@@ -20,3 +20,8 @@
             - snyk-security.snyk-vulnerability-scanner
 
     - role: "start-kali-clean"
+  post_tasks:
+    - name: "Reboot"
+      reboot:
+        msg: "Rebooting kali"
+        pre_reboot_delay: 10
