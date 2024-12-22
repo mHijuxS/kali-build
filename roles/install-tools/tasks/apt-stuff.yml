@@ -16,6 +16,7 @@
       - ruby-rubygems
       - ruby-dev
       - curl
+      - burpsuite
       - dconf-cli
       - openjdk-17-jdk
       - golang
