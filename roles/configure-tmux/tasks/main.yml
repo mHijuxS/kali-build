@@ -5,9 +5,15 @@
     state: present
   become: true
   become_method: sudo
+
 - name: "Copying Tmux Config"
   copy:
     src: "{{ role_path }}/files/.tmux.conf"
     dest: "{{ ansible_env.HOME }}"
+
+- name: "Install tmux plugin"
+  git:
+    repo: "https://github.com/tmux-plugins/tpm"
+    dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
 
 

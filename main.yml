@@ -19,3 +19,4 @@
             - GitHub.copilot
             - snyk-security.snyk-vulnerability-scanner
 
+    - role: "start-kali-clean"
