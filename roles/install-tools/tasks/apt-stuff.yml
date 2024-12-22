@@ -16,6 +16,7 @@
       - ruby-rubygems
       - ruby-dev
       - curl
+      - ufw
       - rsyslog
       - burpsuite
       - dconf-cli
