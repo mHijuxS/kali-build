@@ -103,11 +103,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=$PATH:/opt/PythonVenv/bin
+export PATH=$PATH:$HOME/go/bin
 
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
 
-export HTB_TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1IiwianRpIjoiYTAyM2NhN2E5ZDA1NWE3MDc1OGYwOTEzODQ1OWY1OGE4YWU4OWUxNThhNTExNjA5YzI0YThlZmJkZWY0MThhZjhkNWNlZDgwOWU3ZTk2OWEiLCJpYXQiOjE3MzQ0NzgzNjUuOTMxOTE0LCJuYmYiOjE3MzQ0NzgzNjUuOTMxOTE3LCJleHAiOjE3NjYwMTQzNjUuOTIzNzg4LCJzdWIiOiIxNjQzNzIxIiwic2NvcGVzIjpbXX0.Ta1FMN6iXyStz5kN0zVZVEXIUG94nLOKexww01R8ZI_vWxMJYxOBZQz25RxRfIHfOZohnJ4kMifS-KjRBo2udDkUKhC44oWYrlMN1TxsUR2P5yRhjJ3M9NwjCCG2hIDjw-qGO7PiSYQnIAxwJEj46EfJGP1pgtl6peb3wLvO98r7Pg7SdkpfaOtOD5DEVn-VNE03jOkOlMlPgyCwh9isB-dgE8gmwEUriF6GwL0z_7yZTml-8lfkjMKHgZRc6h7FC_iWFVIjjs9wNVxluvaZkieoRSL0avN6upJ2gWR-MBNbpqH_rklmyX1roGzPxDW5iBnC_jW4uDvEB9D7uouAnXYT6I32FplcGEj9o9ltvdBh7rMwU-FZGjzxD93-sqNvEdowmeUUJpaUQl5LyzzROm_vZZwN5tBA1Qlp3zTcnOzXRPAI0StpzPMG_VSKjoGE4o9eMetAsnxlU8S0cj2J77ZttV-GdL55T4-7ePj1kdvndo56zI8aFNWgfPrPUMuZ-tq6ga0GX2uOjmS5l8AAMaiKEQ6Oykz9mGDpmGUuMXc3fA3B13hGLKfazaziBrBKGTg2jykCaSQpwnXAk0jC1UHxwZbHDN94w_CGo6uxVFOsfig24F2Hhx6ZZr6SHcfnDuEP_aGGhqWVIMY0_N-jKSLc1C8_mlgcosC2sFMewGk
-export PATH=/home/mh1lux5/.local/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/PythonVenv/bin:/home/mh1lux5/.cargo/bin
