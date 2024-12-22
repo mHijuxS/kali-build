@@ -13,6 +13,7 @@
   package:
     name:
       - jq
+      - ruby-rubygems
       - golang
       - pipx
       - ntpdate
