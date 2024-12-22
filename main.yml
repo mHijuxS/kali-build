@@ -19,7 +19,7 @@
             - GitHub.copilot
             - snyk-security.snyk-vulnerability-scanner
 
-    - role: "start-kali-clean"
+    - role: "roles/start-kali-clean"
   post_tasks:
     - name: "Reboot"
       reboot:
