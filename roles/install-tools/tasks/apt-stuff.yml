@@ -15,7 +15,9 @@
       - jq
       - ruby-rubygems
       - ruby-dev
+      - curl
       - dconf-cli
+      - openjdk-17-jdk
       - golang
       - pipx
       - ntpdate
