@@ -15,7 +15,9 @@
       - jq
       - ruby-rubygems
       - ruby-dev
+      - dirsearch
       - curl
+      - vim-gtk3
       - ufw
       - rsyslog
       - burpsuite
