@@ -1,9 +1,7 @@
 ---
 - name: "Installing tools from Gems"
-  gem:
-    name: "{{ item }}"
-    state: latest
-  loop:
+  command: "gem install {{ item }}"
+  with_items:
     - logger
     - stringio
     - winrm
