@@ -29,6 +29,10 @@
       - flameshot
       - exiftool
       - sqlitebrowser
+      - xxd
+      - xclip
+      - hashcat
+      - john
     state: latest
   become: true
   become_method: sudo

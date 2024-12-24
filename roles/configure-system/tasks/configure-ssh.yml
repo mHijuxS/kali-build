@@ -1,0 +1,7 @@
+- name: "Configure SSH To Enable Command Line"
+  become: true
+  lineinfile:
+    dest: /etc/ssh/ssh_config
+    insertbefore: EOF
+    line: "    EnableEscapeCommandline yes"
+  become_method: sudo
