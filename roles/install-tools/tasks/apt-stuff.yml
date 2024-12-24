@@ -28,6 +28,7 @@
       - ntpdate
       - flameshot
       - exiftool
+      - sqlitebrowser
     state: latest
   become: true
   become_method: sudo
