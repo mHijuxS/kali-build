@@ -33,6 +33,7 @@
       - xclip
       - hashcat
       - john
+      - nmap
     state: latest
   become: true
   become_method: sudo
