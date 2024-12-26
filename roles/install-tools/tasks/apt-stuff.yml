@@ -35,6 +35,7 @@
       - john
       - nmap
       - freerdp3-x11
+      - ldap-utils
     state: latest
   become: true
   become_method: sudo
