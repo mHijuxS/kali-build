@@ -1,4 +1,6 @@
 ---
 - name: "install Kerbrute"
   shell: go install github.com/ropnop/kerbrute@master
+- name: "Install ffuf"
+  shell: go install github.com/ffuf/ffuf/v2@latest
 
