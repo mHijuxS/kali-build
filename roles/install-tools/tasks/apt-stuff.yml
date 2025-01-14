@@ -36,6 +36,7 @@
       - nmap
       - freerdp3-x11
       - ldap-utils
+      - rlwrap
     state: latest
   become: true
   become_method: sudo
