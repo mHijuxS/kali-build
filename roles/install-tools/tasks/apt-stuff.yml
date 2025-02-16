@@ -13,6 +13,12 @@
   package:
     name:
       - jq
+      - python3-dev 
+      - python3-pip
+      - python3-venv 
+      - python3-wheel 
+      - build-essential 
+      - libffi-dev
       - ruby-rubygems
       - ruby-dev
       - dirsearch

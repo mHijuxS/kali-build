@@ -8,7 +8,6 @@
     - role: "roles/customize-browser"
     - role: "roles/configure-logging"
     - role: "roles/configure-system"
-    - role: "roles/customize-terminal"
     - role: gantsign.visual-studio-code
       users:
         - username: "{{ ansible_user_id }}" 

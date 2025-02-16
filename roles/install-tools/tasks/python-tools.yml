@@ -1,17 +1,31 @@
 ---
-- name: "Install pipx tools"
-  community.general.pipx:
-    name: "{{ item.name }}"
-    source: "{{ item.url }}"
-    state: latest
-  loop:
-    - { name: 'impacket', url: 'git+https://github.com/fortra/impacket.git' }
-    - { name: 'netexec', url: 'git+https://github.com/Pennyw0rth/NetExec.git' }
-    - { name: 'certipy-ad', url: 'git+https://github.com/ly4k/Certipy.git' }
-    - { name: 'bloodyAD', url: 'git+https://github.com/CravateRouge/bloodyAD.git' }
-    - { name: 'bloodhound-python', url: 'git+https://github.com/dirkjanm/BloodHound.py.git' }
+- name: "Install pipx tools (try name first, fallback to URL)"
+  block:
+    - name: "Try installing {{ item.name }} via package name"
+      shell: |
+        pipx list | grep -qw "{{ item.name }}" || pipx install "{{ item.name }}"
+      register: pipx_result
+      changed_when: "'installed package' in pipx_result.stdout"
+      failed_when: pipx_result.rc != 0 and 'already seems to be installed' not in pipx_result.stderr
+      loop:
+        - { name: 'impacket', url: 'git+https://github.com/fortra/impacket.git' }
+        - { name: 'netexec', url: 'git+https://github.com/Pennyw0rth/NetExec.git' }
+        - { name: 'certipy-ad', url: 'git+https://github.com/ly4k/Certipy.git' }
+        - { name: 'bloodyAD', url: 'git+https://github.com/CravateRouge/bloodyAD.git' }
+        - { name: 'bloodhound-python', url: 'git+https://github.com/dirkjanm/BloodHound.py.git' }
+      ignore_errors: yes
+
+    - name: "Fallback: Try installing {{ item.name }} via URL if name install failed"
+      shell: |
+        pipx list | grep -qw "{{ item.name }}" || pipx install "{{ item.url }}"
+      when: pipx_result is failed
+      loop:
+        - { name: 'impacket', url: 'git+https://github.com/fortra/impacket.git' }
+        - { name: 'netexec', url: 'git+https://github.com/Pennyw0rth/NetExec.git' }
+        - { name: 'certipy-ad', url: 'git+https://github.com/ly4k/Certipy.git' }
+        - { name: 'bloodyAD', url: 'git+https://github.com/CravateRouge/bloodyAD.git' }
+        - { name: 'bloodhound-python', url: 'git+https://github.com/dirkjanm/BloodHound.py.git' }
+
 - name: "Ensuring pip path"
-  shell: 
-    cmd: "pipx ensurepath"
-  args:
-    executable: /bin/zsh
+  shell: "pipx ensurepath"
+

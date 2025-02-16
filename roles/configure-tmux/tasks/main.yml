@@ -16,4 +16,6 @@
     repo: "https://github.com/tmux-plugins/tpm"
     dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
 
-
+- name: "Install ZSH"
+  shell: |
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
